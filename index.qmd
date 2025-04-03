@@ -1,0 +1,21 @@
+---
+title: ESS 330 Project Kickoff
+authors:
+  - name: Maya McCain
+    affiliation: Colorado State University
+    roles: writing
+    corresponding: true
+  - name: Emily Mitchell
+    affiliation: Colorado State University
+    roles: writing
+    corresponding: false
+  - name: Ally Lewis
+    affiliation: Colorado State University
+    roles: writing
+    corresponding: false
+bibliography: references.bib
+csl: apa.csl
+---
+
+## Section
+This is a simple placeholder for the manuscript's main document [@knuth84].
