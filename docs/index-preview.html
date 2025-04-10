@@ -1,48 +1,171 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="generator" content="quarto-1.5.57">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>ESS 330 Project Kickoff</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
+    <title>ESS 330 Project Kickoff</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      div.columns{display: flex; gap: min(4vw, 1.5em);}
+      div.column{flex: auto; overflow-x: auto;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      ul.task-list li input[type="checkbox"] {
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+        vertical-align: middle;
+      }
+      /* CSS for syntax highlighting */
+      pre > code.sourceCode { white-space: pre; position: relative; }
+      pre > code.sourceCode > span { line-height: 1.25; }
+      pre > code.sourceCode > span:empty { height: 1.2em; }
+      .sourceCode { overflow: visible; }
+      code.sourceCode > span { color: inherit; text-decoration: inherit; }
+      div.sourceCode { margin: 1em 0; }
+      pre.sourceCode { margin: 0; }
+      @media screen {
+      div.sourceCode { overflow: auto; }
+      }
+      @media print {
+      pre > code.sourceCode { white-space: pre-wrap; }
+      pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+      }
+      pre.numberSource code
+        { counter-reset: source-line 0; }
+      pre.numberSource code > span
+        { position: relative; left: -4em; counter-increment: source-line; }
+      pre.numberSource code > span > a:first-child::before
+        { content: counter(source-line);
+          position: relative; left: -1em; text-align: right; vertical-align: baseline;
+          border: none; display: inline-block;
+          -webkit-touch-callout: none; -webkit-user-select: none;
+          -khtml-user-select: none; -moz-user-select: none;
+          -ms-user-select: none; user-select: none;
+          padding: 0 4px; width: 4em;
+        }
+      pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+      div.sourceCode
+        {   }
+      @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+      }
+      /* CSS for citations */
+      div.csl-bib-body { }
+      div.csl-entry {
+        clear: both;
+        margin-bottom: 0em;
+      }
+      .hanging-indent div.csl-entry {
+        margin-left:2em;
+        text-indent:-2em;
+      }
+      div.csl-left-margin {
+        min-width:2em;
+        float:left;
+      }
+      div.csl-right-inline {
+        margin-left:2em;
+        padding-left:1em;
+      }
+      div.csl-indent {
+        margin-left: 2em;
+      }    </style>
+
+    <style>
+      body.hypothesis-enabled #quarto-embed-header {
+        padding-right: 36px;
+      }
+
+      #quarto-embed-header {
+        height: 3em;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid 1px;
+      }
+
+      #quarto-embed-header h6 {
+        font-size: 1.1em;
+        padding-top: 0.6em;
+        margin-left: 1em;
+        margin-right: 1em;
+        font-weight: 400;
+      }
+
+      #quarto-embed-header a.quarto-back-link,
+      #quarto-embed-header a.quarto-download-embed {
+        font-size: 0.8em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+
+      .quarto-back-container {
+        padding-left: 0.5em;
+        display: flex;
+      }
+
+      .headroom {
+          will-change: transform;
+          transition: transform 200ms linear;
+      }
+
+      .headroom--pinned {
+          transform: translateY(0%);
+      }
+
+      .headroom--unpinned {
+          transform: translateY(-100%);
+      }      
+    </style>
+
+    <script>
+    window.document.addEventListener("DOMContentLoaded", function () {
+
+      var header = window.document.querySelector("#quarto-embed-header");
+      const titleBannerEl = window.document.querySelector("body > #title-block-header");
+      if (titleBannerEl) {
+        titleBannerEl.style.paddingTop = header.clientHeight + "px";
+      }
+      const contentEl = window.document.getElementById('quarto-content');
+      for (const child of contentEl.children) {
+        child.style.paddingTop = header.clientHeight + "px";
+        child.style.marginTop = "1em";
+      }
+
+      // Use the article root if the `back` call doesn't work. This isn't perfect
+      // but should typically work
+      window.quartoBackToArticle = () => {
+        var currentUrl = window.location.href;
+        window.history.back();
+        setTimeout(() => {
+            // if location was not changed in 100 ms, then there is no history back
+            if(currentUrl === window.location.href){              
+                // redirect to site root
+                window.location.href = "index.html";
+            }
+        }, 100);
+      }
+
+      const headroom = new window.Headroom(header, {
+        tolerance: 5,
+        onPin: function () {
+        },
+        onUnpin: function () {
+        },
+      });
+      headroom.init();
+    });
+    </script>
+
+    
+<script src="site_libs/manuscript-notebook/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -56,15 +179,13 @@ div.csl-indent {
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
-<script async="" src="https://hypothes.is/embed.js"></script>
+     <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
     document.body.classList.add('hypothesis-enabled');
   });
-</script>
-
-
-<meta name="citation_title" content="ESS 330 Project Kickoff">
+</script>  
+      <meta name="citation_title" content="ESS 330 Project Kickoff">
 <meta name="citation_author" content="Maya McCain">
 <meta name="citation_author" content="Emily Mitchell">
 <meta name="citation_author" content="Ally Lewis">
@@ -75,9 +196,16 @@ div.csl-indent {
 <meta name="citation_reference" content="citation_title=Physically based modeling of many-year dynamics of daily streamflow and snow water equivalent in the lena r. basin;,citation_author=EM Gusev;,citation_author=ON Nasonova;,citation_author=L Ya Dzhogan;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_volume=43;,citation_journal_title=Water Resources;,citation_publisher=Springer;">
 </head>
 
-<body>
+  <body class="quarto-notebook">
+    <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
+      
+      <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
+      <h6><i class="bi bi-journal-code"></i> Article Notebook</h6>
 
-<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+            <a href="./index.qmd" class="btn btn-primary quarto-download-embed" download="index.qmd">Download Source</a>
+          </div>
+
+     <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">ESS 330 Project Kickoff</h1>
@@ -124,7 +252,7 @@ div.csl-indent {
               </div>
       </div>
       <div class="quarto-title-meta-column-end quarto-other-formats-target">
-      <div class="quarto-alternate-formats"><div class="quarto-title-meta-heading">Other Formats</div><div class="quarto-title-meta-contents"><p><a href="index.docx"><i class="bi bi-file-word"></i>MS Word</a></p></div><div class="quarto-title-meta-contents"><p><a href="index-meca.zip" data-meca-link="true"><i class="bi bi-archive"></i>MECA Bundle</a></p></div></div></div>
+      </div>
     </div>
 
 
@@ -144,18 +272,13 @@ div.csl-indent {
   <li><a href="#preliminary-methods" id="toc-preliminary-methods" class="nav-link" data-scroll-target="#preliminary-methods">Preliminary Methods</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="index-preview.html"><i class="bi bi-journal-code"></i>Article Notebook</a></li></ul></div></nav>
+</nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-
-
-  
-
-
-<section id="snowmelt-and-streamflow-the-role-of-snow-water-equivalent-in-shaping-discharge-patterns-in-the-cache-la-poudre-river" class="level1">
+       <section id="snowmelt-and-streamflow-the-role-of-snow-water-equivalent-in-shaping-discharge-patterns-in-the-cache-la-poudre-river" class="level1">
 <h1>Snowmelt and Streamflow: The Role of Snow Water Equivalent in Shaping Discharge Patterns in the Cache la Poudre River</h1>
 <section id="introduction-background-motivation" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-background-motivation">Introduction, Background, Motivation</h2>
@@ -171,35 +294,33 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="data-exploration">Data Exploration</h2>
 <p>The datasets we are looking at are daily average Snow Water Equivalent (SWE) data and daily average discharge data recorded in the Cache la Poudre River. The SWE data, obtained from the Natural Resources Conservation Service, consists of observations from the Joe Wright SNOTEL Station (Station 551). The dates of collection that we will be looking at span from the year 2000 to 2024. The discharge data was obtained from the Colorado Division of Water Resources website from a DWR/USGS gauge site titled “Cache La Poudre at Canyon Mouth Near Fort Collins” located on the left bank of the river approximately 9 miles northwest of Fort Collins. The dates of collection that we will be looking at align with the SWE data (2000 - 2024).</p>
 <p>Initial SWE Data Visualization:</p>
-<div class="cell">
+<div class="cell-container"><div class="cell-decorator"><pre>In [1]:</pre></div><div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"swe_visualization.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
+<div class="">
 <figure class="figure">
-<p><a href="swe_visualization.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="swe_visualization.png" class="img-fluid figure-img" width="690"></a></p>
+<p class=""><a href="swe_visualization.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="swe_visualization.png" class="img-fluid figure-img" width="690"></a></p>
 </figure>
 </div>
 </div>
-<a class="quarto-notebook-link" id="nblink-1" href="index-preview.html">Source: Article Notebook</a></div>
+</div></div>
 <p>Initial Discharge Data Visualization:</p>
-<div class="cell">
+<div class="cell-container"><div class="cell-decorator"><pre>In [2]:</pre></div><div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"discharge_visualization.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
+<div class="">
 <figure class="figure">
-<p><a href="discharge_visualization.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="discharge_visualization.png" class="img-fluid figure-img" width="690"></a></p>
+<p class=""><a href="discharge_visualization.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="discharge_visualization.png" class="img-fluid figure-img" width="690"></a></p>
 </figure>
 </div>
 </div>
-</div>
+</div></div>
 <p>To clean our data, we will need to drop the NA values. To merge the datasets and continue with our methods, we will need to adjust the format and groupings of the dates and further explore the distribution of the variables. If needed, we will log transform the variables to ensure the assumptions of our statistical tests are met.</p>
 </section>
 <section id="preliminary-methods" class="level2">
 <h2 class="anchored" data-anchor-id="preliminary-methods">Preliminary Methods</h2>
 <p>To analyze our data, we will complete statistical and visual analyses of our two hydrologic datasets, one for snow water equivalent taken from the Joe Wright SNOTEL station, and another for discharge data from the Canyon Mouth gauge near Fort Collins. These datasets include daily collections for easy alignment and analysis, and span over a 24-year period that will allow us to examine long-term trends that might appear. Ideally, this would include creating both scatter plots and time series visualizations. We currently have our core datasets and do not see additional data being needed unless we run into complications with our current data, or decide to do additional comparisons with variables such as temperature or precipitation. Possible data complications would include missing variables within either set of data as well as possible extreme outlier variables from severe drought or flood years, which would require additional data cleaning and possibly force us to narrow down our window of time. Possible method complications include date mismatches between each set which would cause issues when merging them for analysis. Our methods of analysis will directly aid in our ability to recognize a relationship between snow water equivalent and stream discharge data.</p>
-
-</section>
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-hammond2018" class="csl-entry" role="listitem">
 Hammond, J. C., Saavedra, F. A., &amp; Kampf, S. K. (2018). How does snow persistence relate to annual streamflow in mountain watersheds of the western US with wet maritime and dry continental climates? <em>Water Resources Research</em>, <em>54</em>(4), 2605–2623.
 </div>
@@ -209,9 +330,11 @@ Maity, R., &amp; Kashid, S. (2011). Importance analysis of local and global clim
 <div id="ref-modi2022" class="csl-entry" role="listitem">
 Modi, P. A., Small, E. E., Kasprzyk, J., &amp; Livneh, B. (2022). Investigating the role of snow water equivalent on streamflow predictability during drought. <em>Journal of Hydrometeorology</em>, <em>23</em>(10), 1607–1625.
 </div>
-</div></section></div></main>
-<!-- /main column -->
-<script id="quarto-html-after-body" type="application/javascript">
+</div>
+</section>
+</section>
+     </main>
+<!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -630,9 +753,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-</div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"selector":".lightbox","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
@@ -663,9 +784,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   };
   
 })();
-          </script>
-
-
-
-
+          </script> 
+  
 </body></html>
