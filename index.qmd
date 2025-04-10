@@ -17,5 +17,39 @@ bibliography: references.bib
 csl: apa.csl
 ---
 
-## Section
-This is a simple placeholder for the manuscript's main document [@knuth84].
+# Snowmelt and Streamflow: The Role of Snow Water Equivalent in Shaping Discharge Patterns in the Cache la Poudre River
+
+## Introduction, Background, Motivation
+
+Water is an integral part of ecosystems and human-related necessities. Understanding the relationship between snow water equivalent (SWE) and streamflow can highlight important indicators for water management, drought, flood risk, and ecosystem health, especially in regions where snowmelt is a large factor in the annual hydrological cycle. By investigating this relationship, researchers can begin to further understand indicators for water management, predicting drought, flood mitigation, and sustainability in areas where snow is one of the largest contributors to the water cycle. 
+
+SWE, or snow water equivalent, refers to the amount of water that is stored in the snowpack each season. The runoff from local snowpack every spring is a significant source of water that replenishes nearby streams and aquifers [@modi2022]. This water cycle can be affected by a number of environmental factors, such as solar radiation, temperature, and anthropogenic sources. The effects from these factors can range from changes in streamflow patterns to changes in local ecological health and water availability. 
+
+One of the primary metrics for monitoring and interpreting streamflow is discharge data, which quantifies the volume of water moving through a river channel over time. This data can be utilized to make decisions about water use for agriculture, industry, hydroelectric power, and domestic use [@maity2011]. Increasing pressures on freshwater resources mean that water must be treated as an invaluable resource that requires careful management in order to prevent overconsumption, depletion, and ecological damage. 
+
+Climate change is undoubtedly one of the most pressing challenges humans face, as well as one that is tied to the relationship between snowpack and streamflow. Changing global temperatures significantly impacting the hydrologic cycle is a growing concern that is highly linked to water resource use [@hammond2018]. Rising temperatures and shifting precipitation patterns also influence snow accumulation and subsequently snowmelt and streamflow [@hammond2018]. Understanding these interconnected processes is essential for ensuring sustainable water resource management as humans continue to adapt to a changing world. 
+
+Drought, an increasingly frequent occurrence due to climate change, has a particularly negative impact on water supply and discharge. This is important to take into consideration when predicting streamflow, especially where water availability is heavily reliant on snowmelt [@modi2022]. As drought conditions become more problematic and streamflow becomes harder to predict, the impact to water users and ecological stability grows too. However, the relationship between snow water equivalent and discharge may be used to create models for streamflow predictability [@modi2022]. An important factor to consider when building these models and diving into streamflow predictability is the influence on time lag between precipitation and discharge changes [@maity2011]. This lag can also be influenced by basin topography and environmental factors that should be taken into account. 
+
+In the western United States, many watersheds are snow-dominated, meaning that snowpack serve as a primary source of water for rivers, streams, and aquifers during warmer months. Snow-dominated basins, including those in the Rocky Mountains of Colorado, have a predictive relationship between snow water equivalent (SWE) and water supply and availability [@modi2022]. This relationship between snowpack and discharge is especially relevant in the Cache la Poudre River because streamflow is influenced by the timing and quantity of snowmelt. Studying this relationship will allow for better understanding of the drivers of discharge rates and variability and help develop more accurate tools for predicting water availability. It is important to be prepared for variable water levels that may have implications on the environment and anthropogenic uses. 
+
+In order to explore the relationship between snow water equivalent and discharge, we will utilize hydrological data from two sources. The SWE data will be from the Joe Wright SNOTEL Station (Station 551) and the corresponding discharge data will be from a gauge sight near the mouth of the Cache La Poudre River Canyon. The snow water equivalent data is available from the Natural Resources Conservation Service while the discharge data for the Cache la Poudre River is from the Colorado Division of Water Resources. By synthesizing and analyzing these datasets, we aim to investigate how changes in snowpack levels impact river discharge. 
+
+## Data Exploration
+
+The datasets we are looking at are daily average Snow Water Equivalent (SWE) data and daily average discharge data recorded in the Cache la Poudre River. The SWE data, obtained from the Natural Resources Conservation Service, consists of observations from the Joe Wright SNOTEL Station (Station 551). The dates of collection that we will be looking at span from the year 2000 to 2024. The discharge data was obtained from the Colorado Division of Water Resources website from a DWR/USGS gauge site titled “Cache La Poudre at Canyon Mouth Near Fort Collins” located on the left bank of the river approximately 9 miles northwest of Fort Collins. The dates of collection that we will be looking at align with the SWE data (2000 - 2024). 
+
+Initial SWE Data Visualization: 
+```{r}
+knitr::include_graphics("images/daphnia.png")
+```
+
+Initial Discharge Data Visualization: 
+
+To clean our data, we will need to drop the NA values. To merge the datasets and continue with our methods, we will need to adjust the format and groupings of the dates and further explore the distribution of the variables. If needed, we will log transform the variables to ensure the assumptions of our statistical tests are met.  
+
+## Preliminary Methods
+
+To analyze our data, we will complete statistical and visual analyses of our two hydrologic datasets, one for snow water equivalent taken from the Joe Wright SNOTEL station, and another for discharge data from the Canyon Mouth gauge near Fort Collins. These datasets include daily collections for easy alignment and analysis, and span over a 24-year period that will allow us to examine long-term trends that might appear. Ideally, this would include creating both scatter plots and time series visualizations. We currently have our core datasets and do not see additional data being needed unless we run into complications with our current data, or decide to do additional comparisons with variables such as temperature or precipitation. Possible data complications would include missing variables within either set of data as well as possible extreme outlier variables from severe drought or flood years, which would require additional data cleaning and possibly force us to narrow down our window of time. Possible method complications include date mismatches between each set which would cause issues when merging them for analysis. Our methods of analysis will directly aid in our ability to recognize a relationship between snow water equivalent and stream discharge data. 
+
+
