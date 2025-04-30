@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-    <title>ESS 330 Project Kickoff</title>
+    <title>ESS 330 Results/Discussion Draft</title>
     <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -185,7 +185,7 @@
     document.body.classList.add('hypothesis-enabled');
   });
 </script>  
-      <meta name="citation_title" content="ESS 330 Project Kickoff">
+      <meta name="citation_title" content="ESS 330 Results/Discussion Draft">
 <meta name="citation_author" content="Maya McCain">
 <meta name="citation_author" content="Emily Mitchell">
 <meta name="citation_author" content="Ally Lewis">
@@ -194,6 +194,7 @@
 <meta name="citation_reference" content="citation_title=Importance analysis of local and global climate inputs for basin-scale streamflow prediction;,citation_author=Rajib Maity;,citation_author=SS Kashid;,citation_publication_date=2011;,citation_cover_date=2011;,citation_year=2011;,citation_issue=11;,citation_volume=47;,citation_journal_title=Water Resources Research;,citation_publisher=Wiley Online Library;">
 <meta name="citation_reference" content="citation_title=Investigating the role of snow water equivalent on streamflow predictability during drought;,citation_author=Parthkumar A Modi;,citation_author=Eric E Small;,citation_author=Joseph Kasprzyk;,citation_author=Ben Livneh;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=10;,citation_volume=23;,citation_journal_title=Journal of Hydrometeorology;">
 <meta name="citation_reference" content="citation_title=Physically based modeling of many-year dynamics of daily streamflow and snow water equivalent in the lena r. basin;,citation_author=EM Gusev;,citation_author=ON Nasonova;,citation_author=L Ya Dzhogan;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_volume=43;,citation_journal_title=Water Resources;,citation_publisher=Springer;">
+<meta name="citation_reference" content="citation_title=Geomorphic characteristics influencing post-fire river response in mountain streams.;,citation_abstract=As wildfires increase in frequency and severity, there is a growing interest in understanding river response to the wildfire disturbance cascade. Numerous headwater mountain catchments within the Cache la Poudre (Poudre) River basin in the Colorado Front Range, USA burned severely and extensively during the 2020 Cameron Peak fire. Debris flows and flash floods occurred in many of these catchments triggered by convective storms after the fire. The downstream effects of the floods and sediment varied along a continuum from attenuated and largely contained within the catchment, to releasing substantial volumes of water and sediment to the Poudre River. We conceptualize these catchments as exhibiting decreasing absorbance of post-fire disturbance along the continuum described above based on the geomorphic evidence of relative sediment export. We conceptualize characteristics on different spatial scales as driving or resisting response to disturbance and therefore impacting the absorbing c;,citation_author=Shayla Triantafillou;,citation_author=Ellen Wohl;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://ezproxy2.library.colostate.edu/login?url=https://search.ebscohost.com/login.aspx?direct=true&amp;amp;amp;amp;AuthType=cookie,ip,url,cpid&amp;amp;custid=s4640792&amp;amp;db=aph&amp;amp;AN=180492756&amp;amp;site=ehost-live;,citation_issn=0169555X;,citation_volume=466;,citation_journal_title=Geomorphology;">
 </head>
 
   <body class="quarto-notebook">
@@ -208,7 +209,7 @@
      <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">ESS 330 Project Kickoff</h1>
+      <h1 class="title">ESS 330 Results/Discussion Draft</h1>
           </div>
 
     
@@ -267,9 +268,10 @@
   <ul>
   <li><a href="#snowmelt-and-streamflow-the-role-of-snow-water-equivalent-in-shaping-discharge-patterns-in-the-cache-la-poudre-river" id="toc-snowmelt-and-streamflow-the-role-of-snow-water-equivalent-in-shaping-discharge-patterns-in-the-cache-la-poudre-river" class="nav-link active" data-scroll-target="#snowmelt-and-streamflow-the-role-of-snow-water-equivalent-in-shaping-discharge-patterns-in-the-cache-la-poudre-river">Snowmelt and Streamflow: The Role of Snow Water Equivalent in Shaping Discharge Patterns in the Cache la Poudre River</a>
   <ul class="collapse">
-  <li><a href="#introduction-background-motivation" id="toc-introduction-background-motivation" class="nav-link" data-scroll-target="#introduction-background-motivation">Introduction, Background, Motivation</a></li>
-  <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link" data-scroll-target="#data-exploration">Data Exploration</a></li>
-  <li><a href="#preliminary-methods" id="toc-preliminary-methods" class="nav-link" data-scroll-target="#preliminary-methods">Preliminary Methods</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -280,8 +282,8 @@
 
        <section id="snowmelt-and-streamflow-the-role-of-snow-water-equivalent-in-shaping-discharge-patterns-in-the-cache-la-poudre-river" class="level1">
 <h1>Snowmelt and Streamflow: The Role of Snow Water Equivalent in Shaping Discharge Patterns in the Cache la Poudre River</h1>
-<section id="introduction-background-motivation" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-background-motivation">Introduction, Background, Motivation</h2>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Water is an integral part of ecosystems and human-related necessities. Understanding the relationship between snow water equivalent (SWE) and streamflow can highlight important indicators for water management, drought, flood risk, and ecosystem health, especially in regions where snowmelt is a large factor in the annual hydrological cycle. By investigating this relationship, researchers can begin to further understand indicators for water management, predicting drought, flood mitigation, and sustainability in areas where snow is one of the largest contributors to the water cycle.</p>
 <p>SWE, or snow water equivalent, refers to the amount of water that is stored in the snowpack each season. The runoff from local snowpack every spring is a significant source of water that replenishes nearby streams and aquifers <span class="citation" data-cites="modi2022">(<a href="#ref-modi2022" role="doc-biblioref">Modi, Small, Kasprzyk, &amp; Livneh, 2022</a>)</span>. This water cycle can be affected by a number of environmental factors, such as solar radiation, temperature, and anthropogenic sources. The effects from these factors can range from changes in streamflow patterns to changes in local ecological health and water availability.</p>
 <p>One of the primary metrics for monitoring and interpreting streamflow is discharge data, which quantifies the volume of water moving through a river channel over time. This data can be utilized to make decisions about water use for agriculture, industry, hydroelectric power, and domestic use <span class="citation" data-cites="maity2011">(<a href="#ref-maity2011" role="doc-biblioref">Maity &amp; Kashid, 2011</a>)</span>. Increasing pressures on freshwater resources mean that water must be treated as an invaluable resource that requires careful management in order to prevent overconsumption, depletion, and ecological damage.</p>
@@ -290,8 +292,8 @@
 <p>In the western United States, many watersheds are snow-dominated, meaning that snowpack serve as a primary source of water for rivers, streams, and aquifers during warmer months. Snow-dominated basins, including those in the Rocky Mountains of Colorado, have a predictive relationship between snow water equivalent (SWE) and water supply and availability <span class="citation" data-cites="modi2022">(<a href="#ref-modi2022" role="doc-biblioref">Modi et al., 2022</a>)</span>. This relationship between snowpack and discharge is especially relevant in the Cache la Poudre River because streamflow is influenced by the timing and quantity of snowmelt. Studying this relationship will allow for better understanding of the drivers of discharge rates and variability and help develop more accurate tools for predicting water availability. It is important to be prepared for variable water levels that may have implications on the environment and anthropogenic uses.</p>
 <p>In order to explore the relationship between snow water equivalent and discharge, we will utilize hydrological data from two sources. The SWE data will be from the Joe Wright SNOTEL Station (Station 551) and the corresponding discharge data will be from a gauge sight near the mouth of the Cache La Poudre River Canyon. The snow water equivalent data is available from the Natural Resources Conservation Service while the discharge data for the Cache la Poudre River is from the Colorado Division of Water Resources. By synthesizing and analyzing these datasets, we aim to investigate how changes in snowpack levels impact river discharge.</p>
 </section>
-<section id="data-exploration" class="level2">
-<h2 class="anchored" data-anchor-id="data-exploration">Data Exploration</h2>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
 <p>The datasets we are looking at are daily average Snow Water Equivalent (SWE) data and daily average discharge data recorded in the Cache la Poudre River. The SWE data, obtained from the Natural Resources Conservation Service, consists of observations from the Joe Wright SNOTEL Station (Station 551). The dates of collection that we will be looking at span from the year 2000 to 2024. The discharge data was obtained from the Colorado Division of Water Resources website from a DWR/USGS gauge site titled “Cache La Poudre at Canyon Mouth Near Fort Collins” located on the left bank of the river approximately 9 miles northwest of Fort Collins. The dates of collection that we will be looking at align with the SWE data (2000 - 2024).</p>
 <p>Initial SWE Data Visualization:</p>
 <div class="cell-container"><div class="cell-decorator"><pre>In [1]:</pre></div><div class="cell">
@@ -315,11 +317,54 @@
 </div>
 </div>
 </div></div>
-<p>To clean our data, we will need to drop the NA values. To merge the datasets and continue with our methods, we will need to adjust the format and groupings of the dates and further explore the distribution of the variables. If needed, we will log transform the variables to ensure the assumptions of our statistical tests are met.</p>
+<p>To clean our data, we dropped all of the NA values. To merge the datasets and continue with our methods, we adjusted the format and groupings of the dates and further explored the distribution of the variables. We had difficulty with aligning the dates properly, but were able to organize them effectively through the use of the package Tidyr in Rstudio. We then log transformed our variables to ensure the assumptions of our statistical tests were met.</p>
+<p>We decided to focus our project on a local scope. The Cache la Poudre River runs through Fort Collins and is an important drinking water source. We have narrowed down our analysis from a 24 year period to a 10 year period, ranging from 2013 to 2023. To analyze our data, we completed a number of statistical and visual analyses of our two hydrologic datasets, one for snow water equivalent taken from the Joe Wright SNOTEL station, and another for discharge data from the Canyon Mouth gauge near Fort Collins. These datasets included daily collections for easy alignment and analysis, and spanned over a 24-year period that allow us to examine long-term trends that might appear. This included creating both scatter plots and time series visualizations. A paired t-test was completed to identify the strength of the relationship between snow water equivalent and stream discharge. Additionally, a cross-correlation analysis was made to try and visualize this relationship between our variables, and whether or not there are noticeable seasonal lags from the time of snow water equivalent collection and stream discharge. This was done by comparing each variable under different time shifts, and determining which time shift created the highest level of correlation. This determines the lag period between the two values.</p>
+<p>We currently have our core datasets and do not see additional data being needed unless we run into complications with our current data, or decide to do additional comparisons with variables such as temperature or precipitation. Possible data complications would include missing variables within either set of data as well as possible extreme outlier variables from severe drought or flood years, which would require additional data cleaning and possibly force us to narrow down our window of time. Possible method complications include date mismatches between each set which would cause issues when merging them for analysis. Our methods of analysis will directly aid in our ability to recognize a relationship between snow water equivalent and stream discharge data.</p>
 </section>
-<section id="preliminary-methods" class="level2">
-<h2 class="anchored" data-anchor-id="preliminary-methods">Preliminary Methods</h2>
-<p>To analyze our data, we will complete statistical and visual analyses of our two hydrologic datasets, one for snow water equivalent taken from the Joe Wright SNOTEL station, and another for discharge data from the Canyon Mouth gauge near Fort Collins. These datasets include daily collections for easy alignment and analysis, and span over a 24-year period that will allow us to examine long-term trends that might appear. Ideally, this would include creating both scatter plots and time series visualizations. We currently have our core datasets and do not see additional data being needed unless we run into complications with our current data, or decide to do additional comparisons with variables such as temperature or precipitation. Possible data complications would include missing variables within either set of data as well as possible extreme outlier variables from severe drought or flood years, which would require additional data cleaning and possibly force us to narrow down our window of time. Possible method complications include date mismatches between each set which would cause issues when merging them for analysis. Our methods of analysis will directly aid in our ability to recognize a relationship between snow water equivalent and stream discharge data.</p>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>We visualized streamflow of the Cache la Poudre River and snow water equivalent from the Joe Wright SNOTEL Station using time series analysis. Seasonal changes explain yearly peaks and declines in both discharge and snow water equivalent (Figure 1). In 2011, there was an abnormal peak in snow water equivalent, which correlates with the peak streamflow in 2011 in the Poudre River. The mid-2010s show high peaks in streamflow. In 2012, there was an unusual drop in both snow water equivalent and streamflow (Figure 1).</p>
+<p>Late Spring and early Summer months depicted higher discharge patterns at the mouth of the Cache la Poudre River (Figure 2). May through July depict higher discharge levels as opposed to the later Summer, Fall, and early Spring months. There was a noticeable lag between each variable, with an increase in stream discharge being noted prior to an increase in snow water equivalent. This shows a distinct causational relationship between snow water equivalent and stream discharge, where snow melt increases streamflow after temperatures increase and the melted snowpack reaches the river.</p>
+<p>We also conducted a simple linear regression analysis to determine the relationship between SWE and the logarithm of discharge (Q_log) within our dataset (Figure 3). The model revealed a statistically significant positive relationship between SWE and Q_log ((β = 0.149, SE = 0.002, t = 71.95, p &lt; 2 × 10-16). This indicates that increases in SWE are associated with increases in streamflow. When SWE is zero, the expected discharge value is 3.02. The residual standard error was 1.67, based on 7,798 degrees of freedom. Furthermore, the model accounted for approximately 40% of the variance in Q_log, suggesting a moderate fit (R² = 0.399, adjusted R² = 0.399). Although an R-squared value of 0.399 indicates that a substantial portion of the variance in streamflow remains unexplained, we consider it to be satisfactory in this context. Streamflow is influenced by a wide range of environmental factors not included in this analysis, so having a single predictor (SWE) explain nearly 40% of the variance is meaningful in a variety of ways. While including additional predictor variables such as precipitation, soil type, slope, and land cover may improve overall model performance, this result highlights the role SWE plays in driving discharge variability. It also serves as a solid foundation for future research that incorporates additional dynamics or model structures.</p>
+<p><strong>Figure 1. Streamflow in the Cache la Poudre River and Joe Wright SNOTEL Station SWE over a 20 year period.</strong></p>
+<div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"swe_flow_timeseries_ess_330.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="">
+<figure class="figure">
+<p class=""><a href="swe_flow_timeseries_ess_330.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="swe_flow_timeseries_ess_330.png" class="img-fluid figure-img" width="1180"></a></p>
+</figure>
+</div>
+</div>
+</div></div>
+<p><strong>Figure 2. Average Monthly Streamflow and SWE.</strong></p>
+<div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"monthly_swe_flow.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="">
+<figure class="figure">
+<p class=""><a href="monthly_swe_flow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="monthly_swe_flow.png" class="img-fluid figure-img" width="256"></a></p>
+</figure>
+</div>
+</div>
+</div></div>
+<p><strong>Figure 3. Results of Linear Regression</strong></p>
+<div class="cell-container"><div class="cell-decorator"><pre>In [5]:</pre></div><div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"lm_results_ess330.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="">
+<figure class="figure">
+<p class=""><a href="lm_results_ess330.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="lm_results_ess330.png" class="img-fluid figure-img" width="656"></a></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<p>Streamflow patterns based on snow water equivalent provide information valuable for water management, flood prediction, and drought conditions. The drops in SWE and streamflow in 2012 may be explained by decreased precipitation levels. Low seasonal precipitation periods like this may lead to increased drought as they occur more frequently. It is important to understand snowpack and snow water equivalent because they are indicators of how much water will enter the river in the following months, and when this water enters the streamflow. This relationship between swe and discharge is directly related, enabling swe to be a predictor of streamflow <span class="citation" data-cites="modi2022">(<a href="#ref-modi2022" role="doc-biblioref">Modi et al., 2022</a>)</span>. When creating models for water supply predictions, years where drought occurred may bring errors while training the models to predict streamflow <span class="citation" data-cites="modi2022">(<a href="#ref-modi2022" role="doc-biblioref">Modi et al., 2022</a>)</span>. Fluctuations in precipitation are becoming an increasingly apparent problem, especially in snow-reliant watersheds.</p>
+<p>When there are higher levels of snow water equivalent, there is more opportunity for melting and increased discharge when temperature fluctuations occur. Drought has caused evident declines in snowpack and subsequently, streamflow <span class="citation" data-cites="modi2022">(<a href="#ref-modi2022" role="doc-biblioref">Modi et al., 2022</a>)</span>. In turn, there has been increased variability in snowpack and streamflow interannually, creating difficulties predicting water supply <span class="citation" data-cites="modi2022">(<a href="#ref-modi2022" role="doc-biblioref">Modi et al., 2022</a>)</span>. Drought years are hard to predict because historical snowpack and streamflow data do not consistently reflect these changes in climate <span class="citation" data-cites="modi2022">(<a href="#ref-modi2022" role="doc-biblioref">Modi et al., 2022</a>)</span>. Seasonal changes in snow precipitation can show patterns, however differences in year to year patterns are harder to understand given the level of fluctuation in the data (Figure 1). Understanding the lag patterns between snow water equivalent and stream discharge are also integral to predicting the timing of flooding, in conjunction with weather patterns and predictions of increased rainfall. This can allow communities to prepare for less-than ideal conditions and mitigate damage and loss.</p>
+<p>Two major floods in the Cache la Poudre River were mainly caused by increased rainfall events following severe wildfires. High severity wildfires increase erosion and decrease infiltration rates <span class="citation" data-cites="18049275620241201">(<a href="#ref-18049275620241201" role="doc-biblioref">Triantafillou &amp; Wohl, 2024</a>)</span>. This causes an abnormally high amount of water to enter a river instead of permeating the soil and entering groundwater, which creates high flows and even flooding in some areas. The High Park Fire in 2012 preceded a severe flood in the Cache la Poudre River in 2013. In a similar instance, the Cameron Peak Fire in 2020 contributed to a major flood in the Poudre River in 2021. Given that drought conditions already decrease soil infiltration, the combination of drought conditions and increased wildfires could have detrimental effects on potential flood areas and snow-reliant watersheds. Having the knowledge of SWE and its predictive qualities of streamflow can assist in predicting floods following wildfires, high levels of precipitation during the winter, and increased discharge in the spring. This ability to predict natural events allows time for mitigation and preparation of the community.</p>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-hammond2018" class="csl-entry" role="listitem">
 Hammond, J. C., Saavedra, F. A., &amp; Kampf, S. K. (2018). How does snow persistence relate to annual streamflow in mountain watersheds of the western US with wet maritime and dry continental climates? <em>Water Resources Research</em>, <em>54</em>(4), 2605–2623.
@@ -329,6 +374,9 @@ Maity, R., &amp; Kashid, S. (2011). Importance analysis of local and global clim
 </div>
 <div id="ref-modi2022" class="csl-entry" role="listitem">
 Modi, P. A., Small, E. E., Kasprzyk, J., &amp; Livneh, B. (2022). Investigating the role of snow water equivalent on streamflow predictability during drought. <em>Journal of Hydrometeorology</em>, <em>23</em>(10), 1607–1625.
+</div>
+<div id="ref-18049275620241201" class="csl-entry" role="listitem">
+Triantafillou, S., &amp; Wohl, E. (2024). Geomorphic characteristics influencing post-fire river response in mountain streams. <em>Geomorphology</em>, <em>466</em>, N.PAG. Retrieved from <a href="https://ezproxy2.library.colostate.edu/login?url=https://search.ebscohost.com/login.aspx?direct=true&amp;amp;AuthType=cookie,ip,url,cpid&amp;amp;custid=s4640792&amp;amp;db=aph&amp;amp;AN=180492756&amp;amp;site=ehost-live">https://ezproxy2.library.colostate.edu/login?url=https://search.ebscohost.com/login.aspx?direct=true&amp;amp;AuthType=cookie,ip,url,cpid&amp;amp;custid=s4640792&amp;amp;db=aph&amp;amp;AN=180492756&amp;amp;site=ehost-live</a>
 </div>
 </div>
 </section>
@@ -753,7 +801,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"selector":".lightbox","openEffect":"zoom"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","loop":false,"selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
