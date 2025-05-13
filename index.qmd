@@ -1,5 +1,5 @@
 ---
-title: ESS 330 Results/Discussion Draft
+title: Snowmelt and Streamflow: The Role of Snow Water Equivalent in Shaping Discharge Patterns in the Cache la Poudre River
 authors:
   - name: Maya McCain
     affiliation: Colorado State University
@@ -16,9 +16,6 @@ authors:
 bibliography: references.bib
 csl: apa.csl
 ---
-
-# Snowmelt and Streamflow: The Role of Snow Water Equivalent in Shaping Discharge Patterns in the Cache la Poudre River
-
 ## Introduction
 Water is an integral part of ecosystems and human-related necessities. Understanding the relationship between snow water equivalent (SWE) and streamflow can highlight important indicators for water management, drought, flood risk, and ecosystem health, especially in regions where snowmelt is a large factor in the annual hydrological cycle. By investigating this relationship, researchers can begin to further understand indicators for water management, predicting drought, flood mitigation, and sustainability in areas where snow is one of the largest contributors to the water cycle.
 
