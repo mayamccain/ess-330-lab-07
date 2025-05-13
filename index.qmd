@@ -55,6 +55,27 @@ We decided to focus our project on a local scope. The Cache la Poudre River runs
 
 We currently have our core datasets and do not see additional data being needed unless we run into complications with our current data, or decide to do additional comparisons with variables such as temperature or precipitation. Possible data complications would include missing variables within either set of data as well as possible extreme outlier variables from severe drought or flood years, which would require additional data cleaning and possibly force us to narrow down our window of time. Possible method complications include date mismatches between each set which would cause issues when merging them for analysis. Our methods of analysis will directly aid in our ability to recognize a relationship between snow water equivalent and stream discharge data. 
 
+```{r}
+library(tidyverse)
+library(ggpubr)
+library(skimr)
+library(ggplot2)
+library(dataRetrieval)
+library(tidyverse)
+library(dplyr)
+library(tidymodels)
+library(zoo)
+library(lubridate)
+library(tsibble)
+library(feasts)
+library(plotly)
+library(patchwork)
+```
+```{r}
+swe_disch <- read_csv("~/github/ess-330-lab-07/data/realfinal.csv")
+```
+
+
 ## Results
 We visualized streamflow of the Cache la Poudre River and snow water equivalent from the Joe Wright SNOTEL Station using time series analysis. Seasonal changes explain yearly peaks and declines in both discharge and snow water equivalent (Figure 1). In 2011, there was an abnormal peak in snow water equivalent, which correlates with the peak streamflow in 2011 in the Poudre River. The mid-2010s show high peaks in streamflow. In 2012, there was an unusual drop in both snow water equivalent and streamflow (Figure 1). 
 
@@ -64,6 +85,24 @@ There was a noticeable lag between each variable, with an increase in stream dis
 We also conducted a simple linear regression analysis to determine the relationship between SWE and the logarithm of discharge (Q_log) within our dataset (Figure 3). The model revealed a statistically significant positive relationship between SWE and Q_log ((β = 0.149, SE = 0.002, t = 71.95, p < 2 × 10-16). This indicates that increases in SWE are associated with increases in streamflow. When SWE is zero, the expected discharge value is 3.02. The residual standard error was 1.67, based on 7,798 degrees of freedom. Furthermore, the model accounted for approximately 40% of the variance in Q_log, suggesting a moderate fit (R² = 0.399, adjusted R² = 0.399). Although an R-squared value of 0.399 indicates that a substantial portion of the variance in streamflow remains unexplained, we consider it to be satisfactory in this context. Streamflow is influenced by a wide range of environmental factors not included in this analysis, so having a single predictor (SWE) explain nearly 40% of the variance is meaningful in a variety of ways. While including additional predictor variables such as precipitation, soil type, slope, and land cover may improve overall model performance, this result highlights the role SWE plays in driving discharge variability. It also serves as a solid foundation for future research that incorporates additional dynamics or model structures. 
 
 **Figure 1. Streamflow in the Cache la Poudre River and Joe Wright SNOTEL Station SWE over a 20 year period.** 
+```{r}
+disch_plot <- ggplot(swe_disch, aes(x = date, y = Q)) +
+  geom_line(color = "darkblue") +
+  labs(title = "Cache la Poudre River Streamflow",
+       x = "Year", y = "Discharge (cfs)") +
+  theme_minimal()
+ggplotly(disch_plot)
+
+swe_plot <- ggplot(swe_disch, aes(x = date, y = swe)) +
+  geom_line(color = "darkblue") +
+  labs(title = "Joe Wright SNOTEL Station SWE",
+       x = "Year", y = "Snow Water Equivalent") +
+  theme_minimal()
+ggplotly(swe_plot)
+
+disch_plot + swe_plot
+```
+
 ```{r}
 knitr::include_graphics("swe_flow_timeseries_ess_330.png")
 ```
@@ -77,13 +116,50 @@ knitr::include_graphics("monthly_swe_flow.png")
 
 **Figure 3. Results of Linear Regression**
 ```{r}
-knitr::include_graphics("lm_results_ess330.png")
+swe_disch <- swe_disch %>% 
+   mutate(log_Q = log1p(Q))
+model <- lm(log_Q ~ swe, data = swe_disch)
+summary(model)
+```
+
+**Figure 4. pre and post fire t-test**
+```{r}
+swe_disch$date <- as.Date(swe_disch$date)
+
+pre_fire_start <- as.Date("2020-07-01")
+pre_fire_end <- as.Date("2020-07-30")
+post_fire_start <- as.Date("2021-07-01")
+post_fire_end <- as.Date("2021-07-30")
+
+pre_fire_data <- subset(swe_disch, date >= pre_fire_start & date <= pre_fire_end)
+post_fire_data <- subset(swe_disch, date >= post_fire_start & date <= post_fire_end)
+
+t_test_result <- t.test(pre_fire_data$Q, post_fire_data$Q)
+
+print(t_test_result)
+```
+
+**Figure 4. Cross Correlation**
+```{r}
+swe <- swe_disch$swe
+discharge <- swe_disch$Q
+
+swe <- na.omit(swe)
+discharge <- na.omit(discharge)
+
+plot(swe, type = "l", col = "blue", xlab = "Time", ylab = "SWE", main = "SWE and Discharge over Time")
+lines(discharge, col = "red")
+legend("topright", legend = c("SWE", "Discharge"), col = c("blue", "red"), lty = 1)
+
+ccf_result <- ccf(swe, discharge, lag.max = 50, plot = TRUE, main = "Cross-Correlation between SWE and Discharge")
+
+ccf_result$acf
 ```
 
 ## Discussion
 Streamflow patterns based on snow water equivalent provide information valuable for water management, flood prediction, and drought conditions. The drops in SWE and streamflow in 2012 may be explained by decreased precipitation levels. Low seasonal precipitation periods like this may lead to increased drought as they occur more frequently. It is important to understand snowpack and snow water equivalent because they are indicators of how much water will enter the river in the following months, and when this water enters the streamflow. This relationship between swe and discharge is directly related, enabling swe to be a predictor of streamflow [@modi2022]. When creating models for water supply predictions, years where drought occurred may bring errors while training the models to predict streamflow [@modi2022]. Fluctuations in precipitation are becoming an increasingly apparent problem, especially in snow-reliant watersheds. 
 
-When there are higher levels of snow water equivalent, there is more opportunity for melting and increased discharge when temperature fluctuations occur. Drought has caused evident declines in snowpack and subsequently, streamflow [@modi2022]. In turn, there has been increased variability in snowpack and streamflow interannually, creating difficulties predicting water supply [@modi2022]. Drought years are hard to predict because historical snowpack and streamflow data do not consistently reflect these changes in climate [@modi2022]. Seasonal changes in snow precipitation can show patterns, however differences in year to year patterns are harder to understand given the level of fluctuation in the data (Figure 1). Understanding the lag patterns between snow water equivalent and stream discharge are also integral to predicting the timing of flooding, in conjunction with weather patterns and predictions of increased rainfall. This can allow communities to prepare for less-than ideal conditions and mitigate damage and loss. 
+When there are higher levels of snow water equivalent, there is more opportunity for melting and increased discharge when temperature fluctuations occur. Drought has caused evident declines in snowpack and subsequently, streamflow [@modi2022]. In turn, there has been increased variability in snowpack and streamflow interannually, creating difficulties predicting water supply [@modi2022]. Drought years are hard to predict because historical snowpack and streamflow data do not consistently reflect these changes in climate [@modi2022]. Seasonal changes in snow precipitation can show patterns, however differences in year to year patterns are harder to understand given the level of fluctuation in the data (Figure 1). Understanding the lag patterns between snow water equivalent and stream discharge are also integral to predicting the timing of flooding, in conjunction with weather patterns and predictions of increased rainfall. This can allow communities to prepare for less-than ideal conditions and mitigate damage and loss.
 
 Two major floods in the Cache la Poudre River were mainly caused by increased rainfall events following severe wildfires. High severity wildfires increase erosion and decrease infiltration rates [@18049275620241201]. This causes an abnormally high amount of water to enter a river instead of permeating the soil and entering groundwater, which creates high flows and even flooding in some areas. The High Park Fire in 2012 preceded a severe flood in the Cache la Poudre River in 2013. In a similar instance, the Cameron Peak Fire in 2020 contributed to a major flood in the Poudre River in 2021. Given that drought conditions already decrease soil infiltration, the combination of drought conditions and increased wildfires could have detrimental effects on potential flood areas and snow-reliant watersheds. Having the knowledge of SWE and its predictive qualities of streamflow can assist in predicting floods following wildfires, high levels of precipitation during the winter, and increased discharge in the spring. This ability to predict natural events allows time for mitigation and preparation of the community. 
 
