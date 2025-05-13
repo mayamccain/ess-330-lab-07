@@ -1,5 +1,5 @@
 ---
-title: ESS 330 Results/Discussion Draft
+title: "Snowmelt and Streamflow: The Role of Snow Water Equivalent in Shaping Discharge Patterns in the Cache la Poudre River"
 authors:
   - name: Maya McCain
     affiliation: Colorado State University
@@ -16,9 +16,6 @@ authors:
 bibliography: references.bib
 csl: apa.csl
 ---
-
-# Snowmelt and Streamflow: The Role of Snow Water Equivalent in Shaping Discharge Patterns in the Cache la Poudre River
-
 ## Introduction
 Water is an integral part of ecosystems and human-related necessities. Understanding the relationship between snow water equivalent (SWE) and streamflow can highlight important indicators for water management, drought, flood risk, and ecosystem health, especially in regions where snowmelt is a large factor in the annual hydrological cycle. By investigating this relationship, researchers can begin to further understand indicators for water management, predicting drought, flood mitigation, and sustainability in areas where snow is one of the largest contributors to the water cycle.
 
@@ -116,7 +113,44 @@ knitr::include_graphics("monthly_swe_flow.png")
 
 **Figure 3. Results of Linear Regression**
 ```{r}
-knitr::include_graphics("lm_results_ess330.png")
+swe_disch <- swe_disch %>% 
+   mutate(log_Q = log1p(Q))
+model <- lm(log_Q ~ swe, data = swe_disch)
+summary(model)
+```
+
+**Figure 4. pre and post fire t-test**
+```{r}
+swe_disch$date <- as.Date(swe_disch$date)
+
+pre_fire_start <- as.Date("2020-07-01")
+pre_fire_end <- as.Date("2020-07-30")
+post_fire_start <- as.Date("2021-07-01")
+post_fire_end <- as.Date("2021-07-30")
+
+pre_fire_data <- subset(swe_disch, date >= pre_fire_start & date <= pre_fire_end)
+post_fire_data <- subset(swe_disch, date >= post_fire_start & date <= post_fire_end)
+
+t_test_result <- t.test(pre_fire_data$Q, post_fire_data$Q)
+
+print(t_test_result)
+```
+
+**Figure 4. Cross Correlation**
+```{r}
+swe <- swe_disch$swe
+discharge <- swe_disch$Q
+
+swe <- na.omit(swe)
+discharge <- na.omit(discharge)
+
+plot(swe, type = "l", col = "blue", xlab = "Time", ylab = "SWE", main = "SWE and Discharge over Time")
+lines(discharge, col = "red")
+legend("topright", legend = c("SWE", "Discharge"), col = c("blue", "red"), lty = 1)
+
+ccf_result <- ccf(swe, discharge, lag.max = 50, plot = TRUE, main = "Cross-Correlation between SWE and Discharge")
+
+ccf_result$acf
 ```
 
 ## Discussion

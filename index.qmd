@@ -1,5 +1,5 @@
 ---
-title: Snowmelt and Streamflow: The Role of Snow Water Equivalent in Shaping Discharge Patterns in the Cache la Poudre River
+title: "Snowmelt and Streamflow: The Role of Snow Water Equivalent in Shaping Discharge Patterns in the Cache la Poudre River"
 authors:
   - name: Maya McCain
     affiliation: Colorado State University
